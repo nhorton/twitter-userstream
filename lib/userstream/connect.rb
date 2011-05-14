@@ -15,24 +15,8 @@ class Userstream
         end
       end
 
-      class Basic
-        attr_reader :name, :password
-        def initialize(name, password)
-          @name = name
-          @password = password
-        end
-
-        def oauth?
-          false
-        end
-      end
-
       def self.oauth(access_token, access_secret, name = nil)
         Oauth.new(access_token, access_secret, name)
-      end
-      
-      def self.basic(name, password)
-        Basic.new(name, password)
       end
     end
 
