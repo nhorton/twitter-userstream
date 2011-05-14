@@ -1,7 +1,7 @@
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |s|
-    s.name = "userstream"
+    s.name = "twitter-userstream"
     s.description = s.summary = "Eventmachine-based Twitter Userstream client"
     s.email = "noah@involver.com"
     s.homepage = "https://github.com/nhorton/twitter-userstream"
