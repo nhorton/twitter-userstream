@@ -1,4 +1,4 @@
-# Generated from /Users/joshua/Development/chirpstream/chirpstream.gemspec
+# Generated from /Users/joshua/Development/userstream/userstream.gemspec
 source :gemcutter
 gem "eventmachine", ">= 0.12.10"
 gem "em-http-request", ">= 0.2.7"

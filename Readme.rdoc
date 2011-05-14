@@ -1,14 +1,14 @@
-= Chirpstream
+= Userstream
 
 == About
 
-This is an experimental EventMachine-based client for http://chirpstream.twitter.com.
+This is an experimental EventMachine-based client for http://userstream.twitter.com.
 
 == Fun Things You Can Do At Home
 
 Fire up the growl client!
 
-  sudo gem install chirpstream
+  sudo gem install userstream
   chirp_growl
   
 Wow! It's growling my tweets! How meta.
@@ -16,32 +16,32 @@ Wow! It's growling my tweets! How meta.
 == Usage
 
   require 'rubygems'
-  require 'chirpstream'
+  require 'userstream'
   require 'rainbow'
   
-  chirp = Chirpstream.new
+  chirp = Userstream.new
   chirp.on_reconnect{ puts "reconnecting..." }
   chirp.on_tweet {|t, u| puts "#{t.text} (from #{t.user.name.foreground(:red)} (#{('@' + t.user.screen_name).foreground(:green)}))" }
   chirp.on_follow {|t, u| puts "#{t.source.screen_name.foreground(:green)} following #{t.target.screen_name.foreground(:green)}" }
   chirp.on_favorite {|t, u| puts "#{t.source.screen_name.foreground(:green)} <3 -> #{t.target_object.text}" }
   chirp.on_retweet {|t, u| puts "#{t.source.screen_name.foreground(:green)} RT -> #{t.target_object.text}" }
   chirp.on_direct_message {|t, u| puts "DM : #{t.text} (from #{t.sender.name.foreground(:red)} (#{('@' + t.sender.screen_name).foreground(:green)}))" }
-  chirp.connect(Chirpstream::Connect::User.basic('joshbuddy', 'xxxxxxxx'))
+  chirp.connect(Userstream::Connect::User.basic('joshbuddy', 'xxxxxxxx'))
 
 == Oauth Usage
 
-  chirp = Chirpstream.oauth(consumer_token, consumer_secret)
+  chirp = Userstream.oauth(consumer_token, consumer_secret)
   chirp.on_reconnect{ puts "reconnecting..." }
   chirp.on_tweet {|t, u| puts "#{t.text} (from #{t.user.name.foreground(:red)} (#{('@' + t.user.screen_name).foreground(:green)}))" }
   chirp.on_follow {|t, u| puts "#{t.source.screen_name.foreground(:green)} following #{t.target.screen_name.foreground(:green)}" }
   chirp.on_favorite {|t, u| puts "#{t.source.screen_name.foreground(:green)} <3 -> #{t.target_object.text}" }
   chirp.on_retweet {|t, u| puts "#{t.source.screen_name.foreground(:green)} RT -> #{t.target_object.text}" }
   chirp.on_direct_message {|t, u| puts "DM : #{t.text} (from #{t.sender.name.foreground(:red)} (#{('@' + t.sender.screen_name).foreground(:green)}))" }
-  chirp.connect(Chirpstream::Connect::User.oauth(access_token, access_secret))
+  chirp.connect(Userstream::Connect::User.oauth(access_token, access_secret))
 
 == Multi User Usage
 
-  chirp = Chirpstream.new(consumer_token, consumer_secret)
+  chirp = Userstream.new(consumer_token, consumer_secret)
   
   chirp.on_reconnect{ puts "reconnecting..." }
   chirp.on_tweet {|t, u| puts "#{t.text} (from #{t.user.name.foreground(:red)} (#{('@' + t.user.screen_name).foreground(:green)}))" }
@@ -50,4 +50,4 @@ Wow! It's growling my tweets! How meta.
   chirp.on_retweet {|t, u| puts "#{t.source.screen_name.foreground(:green)} RT -> #{t.target_object.text}" }
   chirp.on_direct_message {|t, u| puts "DM : #{t.text} (from #{t.sender.name.foreground(:red)} (#{('@' + t.sender.screen_name).foreground(:green)}))" }
   
-  chirp.connect(Chirpstream::Connect::User.oauth(access_token1, access_secret1), Chirpstream::Connect::User.oauth(access_token2, access_secret2))
+  chirp.connect(Userstream::Connect::User.oauth(access_token1, access_secret1), Userstream::Connect::User.oauth(access_token2, access_secret2))
