@@ -1,59 +1,31 @@
---- 
-dependencies: 
-  oauth: 
-    group: 
-    - :default
-    version: ">= 0.4.0"
-  rainbow: 
-    group: 
-    - :default
-    version: ">= 0"
-  growl: 
-    group: 
-    - :default
-    version: ">= 0"
-  json: 
-    group: 
-    - :default
-    version: ">= 0"
-  em-http-request: 
-    group: 
-    - :default
-    version: ">= 0.2.7"
-  eventmachine: 
-    group: 
-    - :default
-    version: ">= 0.12.10"
-  load_path_find: 
-    group: 
-    - :default
-    version: ">= 0.0.5"
-  yajl-ruby: 
-    group: 
-    - :default
-    version: ">= 0.7.5"
-specs: 
-- addressable: 
-    version: 2.1.2
-- dirge: 
-    version: 0.0.4
-- eventmachine: 
-    version: 0.12.10
-- em-http-request: 
-    version: 0.2.7
-- growl: 
-    version: 1.0.3
-- json: 
-    version: 1.4.3
-- load_path_find: 
-    version: 0.0.5
-- oauth: 
-    version: 0.4.0
-- rainbow: 
-    version: 1.0.4
-- yajl-ruby: 
-    version: 0.7.6
-hash: 751ca486a5dabecc00361525588fc94f8bf428d9
-sources: 
-- Rubygems: 
-    uri: http://gemcutter.org
+GEM
+  remote: http://rubygems.org/
+  specs:
+    addressable (2.2.6)
+    callsite (0.0.4)
+    em-http-request (0.3.0)
+      addressable (>= 2.0.0)
+      escape_utils
+      eventmachine (>= 0.12.9)
+    escape_utils (0.2.3)
+    eventmachine (0.12.10)
+    growl (1.0.3)
+    json (1.5.1)
+    load_path_find (0.0.6)
+      callsite (>= 0.0.2)
+    oauth (0.4.4)
+    rainbow (1.1.1)
+    yajl-ruby (0.8.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  em-http-request (>= 0.2.7)
+  eventmachine (>= 0.12.10)
+  growl
+  json
+  load_path_find (>= 0.0.5)
+  oauth (>= 0.4.0)
+  rainbow
+  yajl-ruby (>= 0.7.5)
