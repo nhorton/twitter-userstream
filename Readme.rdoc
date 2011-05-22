@@ -30,7 +30,7 @@ Wow! It's growling my tweets! How meta.
 
 == Oauth Usage
 
-  usr_stream = Userstream.oauth(consumer_token, consumer_secret)
+  usr_stream = Userstream.new(:consumer_token => consumer_token, :consumer_secret => consumer_secret)
   usr_stream.on_reconnect{ puts "reconnecting..." }
   usr_stream.on_tweet {|t, u| puts "#{t.text} (from #{t.user.name.foreground(:red)} (#{('@' + t.user.screen_name).foreground(:green)}))" }
   usr_stream.on_follow {|t, u| puts "#{t.source.screen_name.foreground(:green)} following #{t.target.screen_name.foreground(:green)}" }
@@ -41,7 +41,7 @@ Wow! It's growling my tweets! How meta.
 
 == Multi User Usage
 
-  usr_stream = Userstream.new(consumer_token, consumer_secret)
+  usr_stream = Userstream.new(:consumer_token => consumer_token, :consumer_secret => consumer_secret)
   
   usr_stream.on_reconnect{ puts "reconnecting..." }
   usr_stream.on_tweet {|t, u| puts "#{t.text} (from #{t.user.name.foreground(:red)} (#{('@' + t.user.screen_name).foreground(:green)}))" }
